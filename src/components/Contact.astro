@@ -1,0 +1,100 @@
+---
+import SectionHeader from './SectionHeader.astro';
+import { site } from '../data/site';
+---
+
+<section class="contact" id="contact" aria-labelledby="contact-heading">
+	<div class="inner">
+		<SectionHeader
+			eyebrow="Let's talk"
+			heading="Contact"
+			headingId="contact-heading"
+			intro="Open to new opportunities, collaborations, or a friendly hello."
+		/>
+		<div class="panel">
+			<p class="lead">
+				The fastest way to reach me is email. You can also find me on GitHub and LinkedIn.
+			</p>
+			<ul class="links">
+				<li>
+					<a class="link primary" href={`mailto:${site.email}`}>Email me</a>
+				</li>
+				<li>
+					<a class="link" href={site.social.github} target="_blank" rel="noopener noreferrer">
+						GitHub
+					</a>
+				</li>
+				<li>
+					<a class="link" href={site.social.linkedin} target="_blank" rel="noopener noreferrer">
+						LinkedIn
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</section>
+
+<style>
+	.contact {
+		background: linear-gradient(180deg, #ffffff 0%, #d3d3d3 100%);
+	}
+
+	.inner {
+		max-width: 72rem;
+		margin: 0 auto;
+		padding: 4rem 1.5rem 5rem;
+	}
+
+	.panel {
+		max-width: 36rem;
+		padding: 2rem;
+		background: #ffffff;
+		border: 2px solid #000080;
+		border-radius: 0.5rem;
+	}
+
+	.lead {
+		margin: 0 0 1.5rem;
+		font-size: 1.05rem;
+		line-height: 1.65;
+		color: #333;
+	}
+
+	.links {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.75rem;
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+
+	.link {
+		display: inline-block;
+		padding: 0.65rem 1.15rem;
+		font-size: 0.9375rem;
+		font-weight: 700;
+		color: #000080;
+		text-decoration: none;
+		border: 2px solid #000080;
+		border-radius: 0.25rem;
+		transition:
+			background 0.15s ease,
+			color 0.15s ease;
+	}
+
+	.link:hover {
+		color: #d3d3d3;
+		background: #000080;
+	}
+
+	.link.primary {
+		color: #d3d3d3;
+		background: #000080;
+	}
+
+	.link.primary:hover {
+		color: #000080;
+		background: transparent;
+	}
+</style>

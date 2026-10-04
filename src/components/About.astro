@@ -1,0 +1,99 @@
+---
+import SectionHeader from './SectionHeader.astro';
+import { focusAreas, site } from '../data/site';
+---
+
+<section class="about" id="about" aria-labelledby="about-heading">
+	<div class="inner">
+		<SectionHeader
+			eyebrow="Introduction"
+			heading="About me"
+			headingId="about-heading"
+		/>
+		<div class="layout">
+			<div class="copy">
+				<p>
+					I'm {site.name}, a {site.role.toLowerCase()} based in {site.location}. I care about
+					writing code that is easy to read, ship, and maintain — and about interfaces that work
+					for everyone.
+				</p>
+				<p>
+					Whether it's a greenfield product or improving an existing system, I focus on
+					performance, accessibility, and clear collaboration with design and stakeholders.
+				</p>
+			</div>
+			<ul class="focus-list">
+				{focusAreas.map((area) => (
+					<li class="focus-item">
+						<h3 class="focus-title">{area.title}</h3>
+						<p class="focus-text">{area.description}</p>
+					</li>
+				))}
+			</ul>
+		</div>
+	</div>
+</section>
+
+<style>
+	.about {
+		background: #ffffff;
+	}
+
+	.inner {
+		max-width: 72rem;
+		margin: 0 auto;
+		padding: 4rem 1.5rem;
+	}
+
+	.layout {
+		display: grid;
+		gap: 2.5rem;
+	}
+
+	.copy p {
+		margin: 0 0 1rem;
+		font-size: 1.05rem;
+		line-height: 1.7;
+		color: #333;
+	}
+
+	.copy p:last-child {
+		margin-bottom: 0;
+	}
+
+	.focus-list {
+		display: grid;
+		gap: 1rem;
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+
+	.focus-item {
+		padding: 1.25rem 1.5rem;
+		background: #d3d3d3;
+		border: 2px solid #000080;
+		border-radius: 0.5rem;
+	}
+
+	.focus-title {
+		margin: 0 0 0.5rem;
+		font-size: 1.0625rem;
+		font-weight: 700;
+		color: #000080;
+	}
+
+	.focus-text {
+		margin: 0;
+		font-size: 0.95rem;
+		line-height: 1.6;
+		color: #1a1a1a;
+	}
+
+	@media (min-width: 56rem) {
+		.layout {
+			grid-template-columns: 1fr 1fr;
+			align-items: start;
+		}
+	}
+</style>

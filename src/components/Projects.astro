@@ -1,0 +1,68 @@
+---
+import ProjectCard, { type Project } from './ProjectCard.astro';
+import SectionHeader from './SectionHeader.astro';
+
+const projects: Project[] = [
+	{
+		title: 'Portfolio site',
+		description:
+			'A fast, static personal site built with Astro. Focused on clear typography, accessible markup, and a minimal two-color palette.',
+		tags: ['Astro', 'TypeScript', 'CSS'],
+		href: '#',
+		repo: 'https://github.com',
+	},
+	{
+		title: 'API dashboard',
+		description:
+			'Internal tooling for monitoring service health and request metrics, with filters and exportable reports for the team.',
+		tags: ['Node.js', 'REST', 'Charts'],
+		href: '#',
+	},
+	{
+		title: 'Design system starter',
+		description:
+			'Reusable UI primitives and documentation for consistent interfaces across web products, with tokens for color and spacing.',
+		tags: ['HTML', 'CSS', 'Accessibility'],
+		repo: 'https://github.com',
+	},
+];
+---
+
+<section class="projects" id="projects" aria-labelledby="projects-heading">
+	<SectionHeader
+		eyebrow="Selected work"
+		heading="Projects"
+		headingId="projects-heading"
+		intro="A few things I have built or contributed to — from side projects to production features."
+	/>
+	<ul class="grid">
+		{projects.map((project) => (
+			<li class="grid-item">
+				<ProjectCard project={project} />
+			</li>
+		))}
+	</ul>
+</section>
+
+<style>
+	.projects {
+		width: 100%;
+		max-width: 72rem;
+		margin: 0 auto;
+		padding: 4rem 1.5rem;
+	}
+
+	.grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(min(100%, 18rem), 1fr));
+		gap: 1.5rem;
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+
+	.grid-item {
+		display: flex;
+		min-height: 0;
+	}
+</style>

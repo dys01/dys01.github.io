@@ -1,0 +1,136 @@
+---
+import SectionHeader from './SectionHeader.astro';
+import { experience } from '../data/site';
+---
+
+<section class="experience" id="experience" aria-labelledby="experience-heading">
+	<div class="inner">
+		<SectionHeader
+			eyebrow="Career"
+			heading="Experience"
+			headingId="experience-heading"
+			intro="Roles and teams where I've learned, shipped, and grown."
+		/>
+		<ol class="timeline">
+			{experience.map((entry) => (
+				<li class="entry">
+					<div class="marker" aria-hidden="true" />
+					<article class="card">
+						<div class="meta">
+							<h3 class="company">{entry.company}</h3>
+							<p class="dates">
+								{entry.start} – {entry.end}
+							</p>
+						</div>
+						<p class="role">{entry.role}</p>
+						<ul class="highlights">
+							{entry.highlights.map((item) => (
+								<li>{item}</li>
+							))}
+						</ul>
+					</article>
+				</li>
+			))}
+		</ol>
+	</div>
+</section>
+
+<style>
+	.experience {
+		background: #f5f5f5;
+		border-block: 2px solid #000080;
+	}
+
+	.inner {
+		max-width: 72rem;
+		margin: 0 auto;
+		padding: 4rem 1.5rem;
+	}
+
+	.timeline {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+
+	.entry {
+		position: relative;
+		display: grid;
+		grid-template-columns: 1.25rem 1fr;
+		gap: 0 1.5rem;
+		padding-bottom: 2rem;
+	}
+
+	.entry:last-child {
+		padding-bottom: 0;
+	}
+
+	.entry:not(:last-child)::before {
+		content: '';
+		position: absolute;
+		left: 0.4375rem;
+		top: 1.25rem;
+		bottom: 0;
+		width: 2px;
+		background: #000080;
+	}
+
+	.marker {
+		width: 0.875rem;
+		height: 0.875rem;
+		margin-top: 0.35rem;
+		background: #000080;
+		border: 3px solid #d3d3d3;
+		border-radius: 50%;
+	}
+
+	.card {
+		padding: 1.25rem 1.5rem;
+		background: #ffffff;
+		border: 2px solid #000080;
+		border-radius: 0.5rem;
+	}
+
+	.meta {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: baseline;
+		justify-content: space-between;
+		gap: 0.5rem 1rem;
+	}
+
+	.company {
+		margin: 0;
+		font-size: 1.125rem;
+		font-weight: 800;
+		color: #000080;
+	}
+
+	.dates {
+		margin: 0;
+		font-size: 0.875rem;
+		font-weight: 600;
+		color: #333;
+	}
+
+	.role {
+		margin: 0.35rem 0 0.75rem;
+		font-weight: 700;
+		color: #1a1a1a;
+	}
+
+	.highlights {
+		margin: 0;
+		padding-left: 1.25rem;
+		color: #333;
+	}
+
+	.highlights li {
+		margin-bottom: 0.35rem;
+		line-height: 1.55;
+	}
+
+	.highlights li:last-child {
+		margin-bottom: 0;
+	}
+</style>

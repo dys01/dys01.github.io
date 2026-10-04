@@ -1,0 +1,47 @@
+---
+import { site } from '../data/site';
+---
+
+<footer class="site-footer">
+	<div class="inner">
+		<p class="copy">
+			© {site.year} {site.name}. All rights reserved.
+		</p>
+		<a class="top" href="#top">Back to top</a>
+	</div>
+</footer>
+
+<style>
+	.site-footer {
+		border-top: 2px solid #000080;
+		background: #000080;
+		color: #d3d3d3;
+	}
+
+	.inner {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: space-between;
+		gap: 1rem;
+		max-width: 72rem;
+		margin: 0 auto;
+		padding: 1.25rem 1.5rem;
+	}
+
+	.copy {
+		margin: 0;
+		font-size: 0.875rem;
+	}
+
+	.top {
+		font-size: 0.875rem;
+		font-weight: 600;
+		color: #d3d3d3;
+		text-decoration: underline;
+	}
+
+	.top:hover {
+		color: #ffffff;
+	}
+</style>

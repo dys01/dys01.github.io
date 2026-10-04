@@ -1,0 +1,150 @@
+---
+import { site } from '../data/site';
+
+const nav = [
+	{ href: '#about', label: 'About' },
+	{ href: '#experience', label: 'Experience' },
+	{ href: '#projects', label: 'Projects' },
+	{ href: '#skills', label: 'Skills' },
+	{ href: '#contact', label: 'Contact' },
+];
+---
+
+<header class="site-header">
+	<div class="inner">
+		<a class="logo" href="#top">{site.name}</a>
+		<nav class="nav" aria-label="Primary">
+			<ul class="nav-list">
+				{nav.map((item) => (
+					<li>
+						<a href={item.href}>{item.label}</a>
+					</li>
+				))}
+			</ul>
+		</nav>
+		<details class="menu">
+			<summary class="menu-toggle">Menu</summary>
+			<ul class="menu-list">
+				{nav.map((item) => (
+					<li>
+						<a href={item.href}>{item.label}</a>
+					</li>
+				))}
+			</ul>
+		</details>
+	</div>
+</header>
+
+<style>
+	.site-header {
+		position: sticky;
+		top: 0;
+		z-index: 50;
+		border-bottom: 2px solid #000080;
+		background: rgb(255 255 255 / 0.92);
+		backdrop-filter: blur(8px);
+	}
+
+	.inner {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 1rem;
+		max-width: 72rem;
+		margin: 0 auto;
+		padding: 1rem 1.5rem;
+	}
+
+	.logo {
+		font-size: 1.125rem;
+		font-weight: 800;
+		color: #000080;
+		text-decoration: none;
+	}
+
+	.logo:hover {
+		text-decoration: underline;
+	}
+
+	.nav-list {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.25rem 1.25rem;
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+
+	.nav-list a {
+		font-size: 0.9375rem;
+		font-weight: 600;
+		color: #1a1a1a;
+		text-decoration: none;
+	}
+
+	.nav-list a:hover {
+		color: #000080;
+		text-decoration: underline;
+	}
+
+	.nav {
+		display: none;
+	}
+
+	.menu {
+		position: relative;
+	}
+
+	.menu-toggle {
+		padding: 0.5rem 0.75rem;
+		font-size: 0.875rem;
+		font-weight: 700;
+		color: #d3d3d3;
+		background: #000080;
+		border-radius: 0.25rem;
+		cursor: pointer;
+		list-style: none;
+	}
+
+	.menu-toggle::-webkit-details-marker {
+		display: none;
+	}
+
+	.menu-list {
+		position: absolute;
+		right: 0;
+		top: calc(100% + 0.5rem);
+		min-width: 11rem;
+		margin: 0;
+		padding: 0.5rem;
+		list-style: none;
+		background: #ffffff;
+		border: 2px solid #000080;
+		border-radius: 0.375rem;
+		box-shadow: 0 8px 24px rgb(0 0 128 / 0.15);
+	}
+
+	.menu-list a {
+		display: block;
+		padding: 0.625rem 0.75rem;
+		font-weight: 600;
+		color: #1a1a1a;
+		text-decoration: none;
+		border-radius: 0.25rem;
+	}
+
+	.menu-list a:hover {
+		background: #d3d3d3;
+		color: #000080;
+	}
+
+	@media (min-width: 48rem) {
+		.nav {
+			display: block;
+		}
+
+		.menu {
+			display: none;
+		}
+	}
+</style>
