@@ -4,14 +4,25 @@ import { site } from '../data/site';
 
 <section class="hero" id="top" aria-labelledby="hero-heading">
 	<div class="inner">
-		<p class="greeting">Hello, I'm</p>
-		<h1 id="hero-heading" class="name">{site.name}</h1>
-		<p class="role">{site.role}</p>
-		<p class="tagline">{site.tagline}</p>
-		<div class="actions">
-			<a class="btn primary" href="#projects">View projects</a>
-			<a class="btn" href="#contact">Get in touch</a>
+		<div class="content">
+			<p class="greeting">Hello, I'm</p>
+			<h1 id="hero-heading" class="name">{site.name}</h1>
+			<p class="role">{site.role}</p>
+			<p class="tagline">{site.tagline}</p>
+			<div class="actions">
+				<a class="btn primary" href="#projects">View projects</a>
+				<a class="btn" href="#contact">Get in touch</a>
+			</div>
 		</div>
+		<img
+			class="portrait"
+			src={site.images.hero}
+			width="480"
+			height="640"
+			alt={`${site.name} at a scenic overlook`}
+			loading="eager"
+			decoding="async"
+		/>
 	</div>
 </section>
 
@@ -22,9 +33,34 @@ import { site } from '../data/site';
 	}
 
 	.inner {
+		display: grid;
+		gap: 2rem;
+		align-items: center;
 		max-width: 72rem;
 		margin: 0 auto;
 		padding: 5rem 1.5rem 4rem;
+	}
+
+	.portrait {
+		width: 100%;
+		max-width: 20rem;
+		margin: 0 auto;
+		border: 2px solid #000080;
+		border-radius: 0.5rem;
+		object-fit: cover;
+		aspect-ratio: 3 / 4;
+	}
+
+	@media (min-width: 48rem) {
+		.inner {
+			grid-template-columns: 1fr auto;
+			gap: 3rem;
+		}
+
+		.portrait {
+			margin: 0;
+			max-width: 16rem;
+		}
 	}
 
 	.greeting {

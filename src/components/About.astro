@@ -12,6 +12,24 @@ import { focusAreas, site } from '../data/site';
 		/>
 		<div class="layout">
 			<div class="copy">
+				<div class="photos">
+					<img
+						src={site.images.about}
+						width="400"
+						height="500"
+						alt={`${site.name} hiking in the mountains`}
+						loading="lazy"
+						decoding="async"
+					/>
+					<img
+						src={site.images.aboutSecondary}
+						width="400"
+						height="500"
+						alt={`${site.name} looking out over the city at dusk`}
+						loading="lazy"
+						decoding="async"
+					/>
+				</div>
 				<p>
 					I'm {site.name}, a {site.role.toLowerCase()} based in {site.location}. I care about
 					writing code that is easy to read, ship, and maintain — and about interfaces that work
@@ -48,6 +66,22 @@ import { focusAreas, site } from '../data/site';
 	.layout {
 		display: grid;
 		gap: 2.5rem;
+	}
+
+	.photos {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 0.75rem;
+		margin-bottom: 1.5rem;
+	}
+
+	.photos img {
+		width: 100%;
+		height: 100%;
+		border: 2px solid #000080;
+		border-radius: 0.5rem;
+		object-fit: cover;
+		aspect-ratio: 4 / 5;
 	}
 
 	.copy p {

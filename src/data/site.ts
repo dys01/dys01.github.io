@@ -10,6 +10,11 @@ export const site = {
 		github: 'https://github.com',
 		linkedin: 'https://linkedin.com',
 	},
+	images: {
+		hero: '/images/profile.png',
+		about: '/images/hiking.png',
+		aboutSecondary: '/images/overlook.png',
+	},
 } as const;
 
 export type ExperienceEntry = {
