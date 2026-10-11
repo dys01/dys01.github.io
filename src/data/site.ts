@@ -1,14 +1,14 @@
 export const site = {
 	name: 'Matthew Dyson',
-	role: 'Software Engineer',
+	role: 'Data Scientist',
 	tagline:
 		'Building fast, accessible web experiences with clean code and thoughtful design.',
-	email: 'hello@example.com',
-	location: 'United States',
+	email: 'matthew.dyson@yale.edu',
+	location: 'New Haven, Connecticut',
 	year: new Date().getFullYear(),
 	social: {
-		github: 'https://github.com',
-		linkedin: 'https://linkedin.com',
+		github: 'https://github.com/dys01',
+		linkedin: 'https://www.linkedin.com/in/matthew-dyson-3b3314437/',
 	},
 	images: {
 		hero: '/images/profile.png',
@@ -27,25 +27,24 @@ export type ExperienceEntry = {
 
 export const experience: ExperienceEntry[] = [
 	{
-		company: 'Your Company',
-		role: 'Software Engineer',
-		start: '2024',
-		end: 'Present',
+		company: "Coming Soon!",
+		role: 'Data Scientist',
+		start: 'Present',
+		end: '',
+		highlights: [
+			'Once I obtain more positions, I will update this section with more details.',
+		],
+	},
+	{
+		company: "Professor Mingyao Li's Lab",
+		role: 'Data Scientist',
+		start: 'March 2025',
+		end: 'June 2026',
 		highlights: [
 			'Shipped customer-facing features with measurable impact on engagement.',
 			'Improved performance and reliability across core product flows.',
 		],
-	},
-	{
-		company: 'Previous Team',
-		role: 'Junior Developer',
-		start: '2022',
-		end: '2024',
-		highlights: [
-			'Collaborated on full-stack features from design through deployment.',
-			'Introduced testing and documentation practices for shared components.',
-		],
-	},
+	}
 ];
 
 export type SkillGroup = {
@@ -55,17 +54,17 @@ export type SkillGroup = {
 
 export const skillGroups: SkillGroup[] = [
 	{
+		title: 'Tools',
+		items: ['Git', 'Python', 'R', 'JavaScript'],
+	},
+	{
 		title: 'Frontend',
-		items: ['TypeScript', 'HTML', 'CSS', 'Astro', 'React'],
+		items: ['HTML', 'CSS', 'Astro'],
 	},
 	{
 		title: 'Backend & APIs',
-		items: ['Node.js', 'REST', 'SQL'],
-	},
-	{
-		title: 'Tools',
-		items: ['Git', 'CI/CD', 'Figma', 'Linux'],
-	},
+		items: ['Node.js'],
+	}
 ];
 
 export const focusAreas = [
@@ -74,11 +73,11 @@ export const focusAreas = [
 		description: 'Responsive, performant sites and apps using modern frameworks and best practices.',
 	},
 	{
-		title: 'UI engineering',
-		description: 'Accessible interfaces, design systems, and polish that holds up in production.',
-	},
-	{
 		title: 'Collaboration',
 		description: 'Clear communication with design and product to deliver maintainable solutions.',
 	},
+	{
+		title: 'Hobbies',
+		description: "I like playing board/card games, taking pictures, and running. I also enjoy cooking and baking, and I'm a musician.",
+	}
 ];
